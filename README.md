@@ -14,7 +14,7 @@ Com o Node v10.13.x e o NPM 6.14.x instalados, siga as instruções abaixo para 
 </p>
 <ul>
     <li>Abra o terminal e acesse o diretório raiz do projeto;</li>
-    <li>Execute o comando: npm install</li>
+    <li>Execute o comando: npm i --save</li>
     <li>Em seguida, execute o comando: npm start</li>
 </ul>
 
