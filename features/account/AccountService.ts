@@ -19,7 +19,8 @@ export class AccountService {
     }
 
     public createAccount(account: Account): void {
-        if (!account.name || Number.isNaN(account.balance) || account.balance < 0) {
+        let balance = Number(account.balance);
+        if (!account.name || Number.isNaN(balance) || balance < 0) {
             throw 400;
         }
         this.repo.save(account);

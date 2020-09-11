@@ -37,9 +37,13 @@ export class AccountResource {
      * @param response
      */
     createAccount = (request: express.Request, response: express.Response) => {
-        const account: Account = request.body;
-        this.service.createAccount(account);
-        response.send(account);
+        try {
+            const account: Account = request.body;
+            this.service.createAccount(account);
+            response.send(account);
+        } catch (e) {
+            this.sendError(e, response);
+        }
     }
 
     /**

@@ -8,16 +8,6 @@
 		{
 			"name": "http://localhost:3000/login",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -44,30 +34,28 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:3000/accounts/{accountId}",
+			"name": "http://localhost:3000/accounts",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
+				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Leandro Barcellos\",\n    \"balance\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:3000/accounts/0",
+					"raw": "http://localhost:3000/accounts",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"accounts",
-						"0"
+						"accounts"
 					]
 				}
 			},
@@ -76,20 +64,10 @@
 		{
 			"name": "http://localhost:3000/accounts/{accountId}/balance",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/accounts/0/balance",
+					"raw": "http://localhost:3000/accounts/1/balance",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -97,7 +75,7 @@
 					"port": "3000",
 					"path": [
 						"accounts",
-						"0",
+						"1",
 						"balance"
 					]
 				}
@@ -107,16 +85,6 @@
 		{
 			"name": "http://localhost:3000/accounts/{accountId}/deposits",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
 				"method": "PATCH",
 				"header": [],
 				"body": {
@@ -129,7 +97,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/accounts/0/deposits",
+					"raw": "http://localhost:3000/accounts/1/deposits",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -137,7 +105,7 @@
 					"port": "3000",
 					"path": [
 						"accounts",
-						"0",
+						"1",
 						"deposits"
 					]
 				}
@@ -147,16 +115,6 @@
 		{
 			"name": "http://localhost:3000/accounts/{accountId}/withdraws",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
 				"method": "PATCH",
 				"header": [],
 				"body": {
@@ -169,7 +127,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/accounts/0/withdraws",
+					"raw": "http://localhost:3000/accounts/1/withdraws",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -177,7 +135,7 @@
 					"port": "3000",
 					"path": [
 						"accounts",
-						"0",
+						"1",
 						"withdraws"
 					]
 				}
@@ -187,20 +145,10 @@
 		{
 			"name": "http://localhost:3000/accounts/{accountId}",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
-				"method": "DELETE",
+				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/accounts/0",
+					"raw": "http://localhost:3000/accounts/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -208,7 +156,27 @@
 					"port": "3000",
 					"path": [
 						"accounts",
-						"0"
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/accounts/{accountId}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/accounts/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"accounts",
+						"5"
 					]
 				}
 			},
